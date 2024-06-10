@@ -1,4 +1,6 @@
-﻿namespace EmpyrionTranslator
+﻿using System.Security.Cryptography;
+
+namespace EmpyrionTranslator
 {
     internal class Language
     {

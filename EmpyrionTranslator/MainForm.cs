@@ -409,8 +409,8 @@ namespace EmpyrionTranslator
                 {
                     var line = string.Join(
                         ",",
-                        lang.Key,
-                        string.Join( ",", from s in lang.Literals select s.Contains( ',' ) ? $"\"{s}\"" : s )
+                        lang.Key.Contains( ',' ) ? $"\"{lang.Key}\"" : lang.Key,
+                        string.Join( ",", from s in lang.Literals select s.Contains( ',' ) || s.Contains( '"' ) ? $"\"{s}\"" : s )
                     );
                     lines.Add( line );
                 }
